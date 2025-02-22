@@ -11,14 +11,7 @@ chroma_client = chromadb.PersistentClient(path="./knowledge_base")
 collection_name = "FAQs"
 collection = chroma_client.get_or_create_collection(collection_name)
 
-def setup_openai(api_key):
-    try:
-        client = openai.OpenAI(api_key=api_key)
-        client.models.list()
-        return client
-    except Exception as e:
-        st.error(f"Invalid API Key: {e}")
-        st.stop()
+api_key=st.secrets["openai_key"]
 
 def retriever(query):
     embedding_model = OpenAIEmbeddings(api_key=api_key)
@@ -143,13 +136,7 @@ st.markdown("""
 
 st.title("🤖 KarryBot - A Personal Assistant")
 
-api_key = st.sidebar.text_input("Enter your OpenAI API Key", type="password")
-
-if not api_key:
-    st.error("No API key provided. Please enter it in the sidebar.")
-    st.stop()
-
-client = setup_openai(api_key)
+client = openai.OpenAI(api_key=api_key)
 
 chat_container = st.container()
 
