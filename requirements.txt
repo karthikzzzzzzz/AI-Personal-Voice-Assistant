@@ -1,0 +1,8 @@
+langchain
+langchain-openai
+langchain-community
+chromadb
+python-dotenv
+streamlit
+librosa
+audio_recorder_streamlit
