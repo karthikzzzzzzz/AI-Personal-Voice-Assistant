@@ -6,3 +6,4 @@ python-dotenv
 streamlit
 librosa
 audio_recorder_streamlit
+pysqlite3-binary
