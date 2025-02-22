@@ -7,3 +7,5 @@ streamlit
 librosa
 audio_recorder_streamlit
 pysqlite3-binary
+llvmlite>=0.41.0
+numba>=0.59.0
