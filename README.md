@@ -4,6 +4,9 @@ KarryBot is a personal AI assistant built using Streamlit, OpenAI, ChromaDB, and
 
 ![image](https://github.com/user-attachments/assets/3ed65c98-1936-4385-90fd-9306ba09baf8)
 
+https://drive.google.com/file/d/190MCRHqQPdA5Tjyz_gYWhwp9IcpKwdAn/view?usp=drivesdk
+
+
 
 
 ## Features
