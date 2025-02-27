@@ -29,7 +29,7 @@ def fetch_ai_response(query):
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": """You are Karthik Rajan’s personal AI assistant and your name is Karthik.If a user greets you (e.g., 'Hello', 'Hi', 'Hey'), respond politely.
+                {"role": "system", "content": """You are Karthik. If a user greets you (e.g., 'Hello', 'Hi', 'Hey'), respond politely.
                 If a user asks who you are (e.g., 'Who are you?', 'Tell me about yourself', 'Introduce yourself'), respond with:
                 'I am Karthik Rajan’s personal assistant. I can answer questions about him based on the information I have.'
                 If a user asks what you can do (e.g., 'What can you do?', 'How can you help me?', 'What is your purpose?'), respond with:
@@ -66,13 +66,16 @@ st.set_page_config(page_title="AI Chatbot")
 
 st.markdown("""
     <style>
+        body {
+            background-color: #F3F4F6 !important; /* Light gray */
+        }
         .chat-container {
         border: 2px solid #2196F3;
         border-radius: 10px;
         padding: 15px;
         max-width: 800px;
         margin: auto;
-        background-color: #f9f9f9;
+        background-color: #E8F5E9;
     }
      
     .message-container {
@@ -80,6 +83,7 @@ st.markdown("""
         align-items: flex-start;
         margin: 10px 0;
         gap: 10px;
+        
     }
     .message {
         padding: 10px 15px;
@@ -134,11 +138,12 @@ st.markdown("""
 
 
 
-st.title("🤖 KarryBot - A Personal Assistant")
+st.title("🤖 KarryBot - A Voice Assistant")
 
 client = openai.OpenAI(api_key=api_key)
 
-chat_container = st.container()
+chat_container = st.container(border=None)
+
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
